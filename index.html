@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lista de Compras</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css">
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <div class="fundo">
+      <div class="container">
+        <h1>Lista de Compras</h1>
+        <hr />
+        <p>
+          Item: <input id="inputItem" type="text" placeholder="Digite o nome do item:"/>
+          Quantidade: <input id="inputQuantidade" type="number" min="1" value="1" />
+          Preço: R$ <input id="inputPreco" type="number" step="0.01" min="0.01" value="0.00" />
+          <button id="btAdicionar">Adicionar</button>
+          <button id="btLimpar">Limpar</button>
+        </p>    
+        <hr />
+        <ul id="lista"></ul>
+      </div>
+    </div>
+  </body>
+</html>
