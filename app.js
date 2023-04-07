@@ -17,12 +17,14 @@ const redesenhaLista = (lista, listaItems) => {
   const thDesc = document.createElement("th");
   const thQtd = document.createElement("th");
   const thPreco = document.createElement("th");
+  const thAcao = document.createElement("th"); 
   thDesc.appendChild(document.createTextNode("Descrição"));
   thQtd.appendChild(document.createTextNode("Qtd."));
   thPreco.appendChild(document.createTextNode("Preço"));
   trHeader.appendChild(thDesc);
   trHeader.appendChild(thQtd);
   trHeader.appendChild(thPreco);
+  trHeader.appendChild(thAcao); 
   thead.appendChild(trHeader);
   table.appendChild(thead);
   const tbody = document.createElement("tbody");
@@ -32,17 +34,27 @@ const redesenhaLista = (lista, listaItems) => {
     const tdDesc = document.createElement("td");
     const tdQtd = document.createElement("td");
     const tdPreco = document.createElement("td");
+    const tdAcao = document.createElement("td"); 
     tdDesc.appendChild(document.createTextNode(item.descricao));
     tdQtd.appendChild(document.createTextNode(item.qtd));
     tdPreco.appendChild(document.createTextNode(item.preco.toFixed(2)));
+    const btRemover = document.createElement("button"); 
+    btRemover.appendChild(document.createTextNode("Remover"));
+    btRemover.onclick = () => { 
+      listaItems.splice(index, 1);
+      redesenhaLista(lista, listaItems);
+    };
+    tdAcao.appendChild(btRemover); 
     tr.appendChild(tdDesc);
     tr.appendChild(tdQtd);
     tr.appendChild(tdPreco);
+    tr.appendChild(tdAcao); 
     tbody.appendChild(tr);
   }
   table.appendChild(tbody);
   lista.appendChild(table);
 };
+
 
 const handleBtAdicionarClick = () => {
   const item = inputItem.value;
