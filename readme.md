@@ -5,4 +5,4 @@ Projeto de uma lista de compras simples desenvolvido para uma atividade de uma d
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](/Lista%20de%20Compras/screencapture.png)
